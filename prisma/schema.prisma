@@ -12,5 +12,6 @@ model vocab {
   meaning    String
   example    String
   vocabulary String
+  type       String?
   createdAt  DateTime @default(now())
 }
