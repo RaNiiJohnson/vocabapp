@@ -8,6 +8,7 @@ export const SubmitButton = (props: ButtonProps) => {
 
   return (
     <Button
+      type="submit"
       variant={"secondary"}
       {...props}
       disabled={props.disabled || pending}

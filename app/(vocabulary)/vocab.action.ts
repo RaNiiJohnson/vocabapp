@@ -2,18 +2,20 @@
 
 import { prisma } from "@/lib/prisma";
 
-export const addVocabAction = async (formdata: FormData) => {
-  const vocabulary = formdata.get("vocabulary") as string;
-  const meaning = formdata.get("definition") as string;
-  const example = formdata.get("example") as string;
+export const addVocabAction = async (formData: FormData) => {
+  const vocabulary = formData.get("vocabulary") as string;
+  const meaning = formData.get("definition") as string;
+  const example = formData.get("example") as string;
+  const type = formData.get("type") as string;
 
-  if (!vocabulary || !meaning || !example) return;
+  if (!vocabulary || !meaning) return;
 
   await prisma.vocab.create({
     data: {
-      example,
+      example: example ?? "",
       vocabulary,
       meaning,
+      type,
     },
   });
 };
