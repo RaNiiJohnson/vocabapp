@@ -37,7 +37,7 @@ export const VocabForm = () => {
   //onChange function
   return (
     <Card>
-      <CardHeader>Avez-vous dissimulé un nouveau vocabulaire?</CardHeader>
+      <CardHeader>Avez-vous assimilé un nouveau vocabulaire?</CardHeader>
       <CardContent>
         <form className="space-y-3" onSubmit={onSubmit}>
           <Input
@@ -48,9 +48,9 @@ export const VocabForm = () => {
           />
           <Input name="definition" placeholder="Signification" required />
           <ContentTextArea name="example" placeholder="Exemple" />
-          <Select name="type" defaultValue="verbe">
+          <Select name="type">
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Genre" />
+              <SelectValue placeholder="Quel type?" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
