@@ -1,4 +1,5 @@
 import { Header } from "@/features/layout/Header";
+import { Providers } from "@/lib/providers";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/theme/ThemeProvider";
 import type { Metadata } from "next";
@@ -21,10 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("h-full")}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <div className="max-w-xl m-auto space-y-4">
-            <Header />
-            {children}
-          </div>
+          <Providers>
+            <div className="space-y-4 font-playpenSans">
+              <Header />
+              <div className="max-w-2xl m-auto">{children}</div>
+            </div>
+          </Providers>
         </ThemeProvider>
       </body>
     </html>
