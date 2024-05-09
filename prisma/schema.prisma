@@ -13,5 +13,8 @@ model vocab {
   example    String
   vocabulary String
   type       String?
+  // user       String   @default("Niavo") // for now,
+  gotIt      Boolean? @default(false)
+  favorite   Boolean? @default(false)
   createdAt  DateTime @default(now())
 }
