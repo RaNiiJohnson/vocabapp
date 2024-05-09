@@ -49,6 +49,18 @@
   }
 }
 
+body::-webkit-scrollbar,
+.search::-webkit-scrollbar,
+.posts::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb,
+.search::-webkit-scrollbar-thumb,
+.posts::-webkit-scrollbar-thumb {
+  background: hwb(346.8 77.2% 49.8%);
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -57,4 +69,14 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@font-face {
+  font-family: "protest";
+  src: url("/ProtestRevolution-Regular.ttf");
+}
+
+@font-face {
+  font-family: "playpenSans";
+  src: url("/static/PlaypenSans-Regular.ttf");
 }
