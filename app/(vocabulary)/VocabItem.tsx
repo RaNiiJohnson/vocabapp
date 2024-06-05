@@ -201,6 +201,8 @@ export const VocabItem = ({ vocab }: VocabItemProps) => {
               <SelectGroup>
                 <SelectItem value="verbe">Verbe</SelectItem>
                 <SelectItem value="adjectif">Adjectif</SelectItem>
+                <SelectItem value="nom">Nom</SelectItem>
+                <SelectItem value="idiomatique">Idiomatique</SelectItem>
                 <SelectItem value="autres">Autres</SelectItem>
               </SelectGroup>
             </SelectContent>
