@@ -11,13 +11,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
-import { FormEventHandler } from "react";
+import { FormEventHandler, useRef } from "react";
 import { ContentTextArea } from "./ContentTextArea";
 import { SubmitButton } from "./SubmitButton";
 import { addVocabAction } from "./vocab.action";
 
 export const VocabForm = () => {
   const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   //onSubmit function
   const onSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
@@ -30,7 +31,7 @@ export const VocabForm = () => {
     await addVocabAction(formData);
 
     router.refresh();
-    form.focus();
+    inputRef.current?.focus();
     form.reset();
   };
 
@@ -41,6 +42,7 @@ export const VocabForm = () => {
       <CardContent>
         <form className="space-y-3" onSubmit={onSubmit}>
           <Input
+            ref={inputRef}
             name="vocabulary"
             autoFocus
             placeholder="Vocabulaire"
@@ -54,6 +56,7 @@ export const VocabForm = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
+                <SelectItem value="idiomatique">Idiomatique</SelectItem>
                 <SelectItem value="verbe">Verbe</SelectItem>
                 <SelectItem value="adjectif">Adjectif</SelectItem>
                 <SelectItem value="nom">Nom</SelectItem>
